@@ -28,8 +28,15 @@ window.addEventListener('scroll', function() {
 
 function downloadResume() {
     var link = document.createElement('a');
-    link.href = 'asset/GOWTHAM_KUMAR_SOLLETI_resume.pdf';
-    link.download = 'GOWTHAM_KUMAR_SOLLETI_resume.pdf';
+    link.href = 'asset/Gowtham_Kumar_Solleti.pdf';
+    link.download = 'GOWTHAM_KUMAR_SOLLETI.pdf';
+    link.click();
+}
+
+function downloadaws() {
+    var link = document.createElement('a');
+    link.href = 'asset/AWS Certified Developer - Associate certificate.pdf';
+    link.download = 'GOWTHAM_AWS_Certificate.pdf';
     link.click();
 }
 function togglePortfolio() {

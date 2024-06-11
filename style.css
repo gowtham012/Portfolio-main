@@ -39,7 +39,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   /* position: fixed; */
-  width: 90%;
+  width: 100%;
   z-index: 99;
   color: #0b151f;
 }
@@ -57,6 +57,16 @@ header nav img {
     brightness(103%) contrast(106%);
 }
 
+.certification {
+  height: 60px; /* Reduce the height to 60px */
+  width: 60px ;  /* Automatically adjust the width to maintain the aspect ratio */
+  display: flex;
+  margin-right: 9rem;
+  filter: none;
+  align-items: center;
+}
+
+
 header nav ul {
   display: flex;
 }
@@ -73,11 +83,11 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #fbfbfb;
+  color: #fec86a;;
 }
 
 header nav ul li .active {
-  color: #fbfbfb;
+  color: #fec86a;
 }
 
 header nav .search {
@@ -132,6 +142,12 @@ header nav .search i {
   font-size: 32px;
   margin-left: 10vw;
 }
+.landing .intro h4 {
+  color: #fbfbfb;
+  font-weight: 200;
+  font-size: 28px;
+  margin-left: 10vw;
+}
 
 .landing .intro h5 {
   color: #9f9999;
@@ -173,16 +189,18 @@ header nav .search i {
   }
 }
 .intro button {
-  height: 48px;
-  width: 144px;
+  height: auto;
+  width: auto;
   margin-top: 2.5vh;
-  margin-left: 10vw;
+  margin-left: 8.5vw;
   background-color: transparent;
   border: 2px solid #fec86a;
   border-radius: 8px;
   color: #fec86a;
   font-size: 16px;
-  transition: all ease 0.5s;
+  transition: all ease 0.6s;
+  display: flex;
+  
 }
 
 .intro button:hover {
@@ -198,15 +216,23 @@ header nav .search i {
   margin-top: 50vh;
 }
 
+.socials i:hover {
+  color: #fec86a;        
+}
 .socials .line {
   background-color: #fec86a;
-  height: 15vh;
+  height: 20vh;
   width: 2.5px;
+  align-self: center;
+  justify-content: center;
+  margin-right: 6px;
 }
 
 .socials i {
-  color: #fbfbfb;
+  color: #ece4e4;
   font-size: 36px;
+           
+  transition: fill 0.5s ease;
 }
 
 .about {
@@ -233,7 +259,12 @@ header nav .search i {
   background-color: #fec86a;
   margin-right: 32px;
 }
-
+.about .description .line {
+  height: 2.5px;
+  width: 400px;
+  background-color: #fec86a;
+  margin-right: 32px;
+}
 .about .description p {
   color: #fbfbfb;
   font-size: 20px;
@@ -269,10 +300,10 @@ header nav .search i {
 }
 
 .skill-card {
-  height: 10vw;
-  width: 10vw;
-  background-color: #3d3e42;
-  border-radius: 20px;
+  height: 7vw;
+  width: 7vw;
+  background-color: #ffffff43;
+  border-radius: 10rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -287,8 +318,8 @@ header nav .search i {
 }
 
 .skill-card img {
-  height: 8vw;
-  width: 8vw;
+  height: 5.5vw;
+  width: 5.5vw;
   object-fit: contain;
 }
 
@@ -465,6 +496,8 @@ header nav .search i {
   color: #635353; /* White text color */
   text-align: center;
   margin-bottom: 20px; /* Add margin bottom for spacing */
+  width: 28rem;
+  font-size: 18px;
 }
 
 .overlay p {
@@ -586,9 +619,9 @@ button:hover {
 }
 
 .exp h2 {
-  color: #fbfbfb;
+  color: #fec86a;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 800;
 }
 
 .exp h2::before {
@@ -602,23 +635,25 @@ button:hover {
   top: 7.5%;
   left: -5%;
   border-radius: 50%;
-  box-shadow: 0px 0px 20px 5px #edb555;
+  box-shadow: 0px 0px 20px 5px #ffb129;
 }
-
+.exp p{
+  width: 90%;
+}
 .exp-desc::before {
   content: "";
-  height: 190px;
+  height: 195px;
   width: 2.5px;
-  background-color: #fbfbfb;
+  background-color: #d3cfc8;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
   left: -5%;
 }
 .exp-desc h3 {
-  color: #fbfbfb;
+  color: #d39326;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 10px 0;
 }
 .exp-desc h5 {
@@ -870,4 +905,26 @@ button:hover {
     height: 30vw; /* Adjust to maintain usability on small screens */
     width: 30vw;
   }
+}
+
+
+.intro{
+  width: 76%;
+}
+
+.download-button {
+  display: inline-block;  /* Allows buttons to be side by side */
+  margin: 0 10px;         /* Adds space between buttons */
+  padding: 10px 20px;     /* Adjusts padding for better appearance */
+  border: none;           /* Removes default border */
+  border-radius: 5px;     /* Rounds corners */
+  text-align: center;     /* Centers text within the button */
+  text-decoration: none;  /* Removes underline from links, if applicable */
+  cursor: pointer;        /* Changes cursor to pointer on hover */
+}
+
+.experience-title{
+  display: flex;
+  width: auto;justify-content: center;
+  align-items: center;
 }

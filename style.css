@@ -1,0 +1,947 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/* @media only screen and (max-width: 600px) { */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #34353b;
+}
+
+.nav_scroll{
+  background-color: #007bff;
+}
+
+header {
+  height: 100vh;
+  padding: 36px 100px;
+  background-image: url(asset/model_bw.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100vw; 
+  transition: background-color 0.3s ease;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed; */
+  width: 100%;
+  z-index: 99;
+  color: #0b151f;
+}
+
+header .scrolled {
+  background-color: #955353; /* Change this to the color you want */
+}
+
+
+header nav img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+  filter: invert(70%) sepia(96%) saturate(558%) hue-rotate(359deg)
+    brightness(103%) contrast(106%);
+}
+
+.certification {
+  height: 60px; /* Reduce the height to 60px */
+  width: 60px ;  /* Automatically adjust the width to maintain the aspect ratio */
+  display: flex;
+  margin-right: 9rem;
+  filter: none;
+  align-items: center;
+}
+
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+  margin: 0px 20px;
+}
+
+header nav ul li a {
+  color: #98999a;
+  text-decoration: none;
+  transition: all ease 0.5s;
+}
+
+header nav ul li a:hover {
+  color: #fec86a;;
+}
+
+header nav ul li .active {
+  color: #fec86a;
+}
+
+header nav .search {
+  height: 48px;
+  width: 200px;
+  background-color: #34353b;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+header nav .search input {
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  color: #fbfbfb;
+  outline: none;
+}
+
+header nav .search input:focus {
+  border: none;
+  outline: none;
+}
+
+header nav .search input::placeholder {
+  color: #98999a;
+  font-size: 16px;
+}
+
+header nav .search i {
+  color: #98999a;
+}
+
+.landing {
+  display: flex;
+  height: 70vh;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing .intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing .intro h3 {
+  color: #fbfbfb;
+  font-weight: 400;
+  font-size: 32px;
+  margin-left: 10vw;
+}
+.landing .intro h4 {
+  color: #fbfbfb;
+  font-weight: 200;
+  font-size: 28px;
+  margin-left: 10vw;
+}
+
+.landing .intro h5 {
+  color: #9f9999;
+  font-weight: 400;
+  font-size: 19px;
+  margin-left: 10vw;
+}
+
+.landing .intro h3 span {
+  color: #fec86a;
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+.landing .intro .command-prompt h5{
+  /* content: "hi my name is"; */
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: typing 4s steps(13) forwards, blink 1s infinite;
+  white-space: nowrap;
+  color: #fec86a;
+  font-family: Consolas, monospace;
+  
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9em; /* Adjust according to the length of your text */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.intro button {
+  height: auto;
+  width: auto;
+  margin-top: 2.5vh;
+  margin-left: 8.5vw;
+  background-color: transparent;
+  border: 2px solid #fec86a;
+  border-radius: 8px;
+  color: #fec86a;
+  font-size: 16px;
+  transition: all ease 0.6s;
+  display: flex;
+  
+}
+
+.intro button:hover {
+  background-color: #fec86a;
+  color: #34353b;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 50vh;
+}
+
+.socials i:hover {
+  color: #fec86a;        
+}
+.socials .line {
+  background-color: #fec86a;
+  height: 20vh;
+  width: 2.5px;
+  align-self: center;
+  justify-content: center;
+  margin-right: 6px;
+}
+
+.socials i {
+  color: #ece4e4;
+  font-size: 36px;
+           
+  transition: fill 0.5s ease;
+}
+
+.about {
+  height: 50vh;
+  width: 100vw;
+  padding: 100px;
+}
+
+.about h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+}
+
+.about .description {
+  display: flex;
+  align-items: start;
+}
+
+.about .description .line {
+  height: 2.5px;
+  width: 400px;
+  background-color: #fec86a;
+  margin-right: 32px;
+}
+.about .description .line {
+  height: 2.5px;
+  width: 400px;
+  background-color: #fec86a;
+  margin-right: 32px;
+}
+.about .description p {
+  color: #fbfbfb;
+  font-size: 20px;
+}
+
+.about .description p span {
+  color: #fec86a;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 100px;
+}
+
+.skills h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 2.5vh;
+}
+
+.skill-card {
+  height: 7vw;
+  width: 7vw;
+  background-color: #66666a7c; /* Base color for the sphere */
+  border-radius: 50%; /* Making it perfectly round */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vh;
+  transition: all ease 0.5s;
+  
+  /* Adding 3D sphere effect */
+  box-shadow: 
+    inset 0 0 10px rgba(105, 62, 62, 0.5),  /* Inner shadow for light effect */
+    inset 0 0 20px rgba(255, 255, 255, 0.3),  /* Inner shadow for depth */
+    0 10px 15px rgba(0, 0, 0, 0.3);           /* Outer shadow for lift effect */
+  background-image: radial-gradient(circle at 30% 30%, #6d6b6b, #fec86a); /* Gradient for 3D lighting */
+}
+
+.skill-card:hover {
+  transform: rotateY(15deg) rotateX(15deg); /* Rotate slightly on hover for 3D effect */
+  box-shadow: 
+    inset 0 0 15px rgba(248, 158, 68, 0.85),
+    inset 0 0 30px rgba(255, 255, 255, 0.3),
+    0 15px 25px #f5f5f5; /* Enhanced shadow on hover */
+}
+
+
+
+
+
+.skill-card img {
+  height: 5.5vw;
+  width: 5.5vw;
+  object-fit: contain;
+  color:#fec86a;
+}
+
+.skill-card h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fbfbfb;
+}
+
+/* .portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 100px;
+}
+
+.portfolio h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+}
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 50px;
+  gap: 2.5vh;
+}
+
+.portfolio-card {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  background-color: #2f3033;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vh;
+  transition: all ease 0.5s;
+}
+
+.portfolio-card img {
+  position: relative;
+  height: 3vw;
+  width: 3vw;
+  object-fit: cover;
+  display: block;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 1; 
+}
+
+.portfolio-card .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  height: 30vw;
+  width: 30vw;
+  background-color: #34353ba2;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.portfolio-card .overlay h3 {
+  color: #fbfbfb;
+  font-size: 30px;
+}
+
+.portfolio-card .overlay p {
+  color: #fbfbfb;
+  font-size: 10px;
+  text-align: center;
+}
+
+.portfolio-card .overlay button {
+  height: 36px;
+  width: 108px;
+  background-color: #fec86a;
+  border: 1px solid #fec86a;
+  border-radius: 8px;
+  color: #34353b;
+  font-size: 12px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.portfolio-card .overlay:hover {
+  opacity: 1;
+}
+
+.portfolio button {
+  margin-top: 50px;
+  height: 48px;
+  width: 144px;
+  background-color: #fec86a;
+  border: 1px solid #fec86a;
+  border-radius: 8px;
+  color: #34353b;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+.portfolio button:hover {
+  background-color: #cc9e4e;
+} */
+
+
+/* Add your CSS styles here */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 100px;
+}
+
+.portfolio h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+}
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 50px;
+  gap: 2.5vh;
+}
+
+.portfolio-card {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  background-color: #5b5c5e;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.5s;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay h3 {
+  margin-top: 0;
+  color: #635353; /* White text color */
+  text-align: center;
+  margin-bottom: 20px; /* Add margin bottom for spacing */
+  width: 28rem;
+  font-size: 18px;
+}
+
+.overlay p {
+  display: none;
+  color: #cec7c7; /* Adjust the color to ensure visibility */
+  text-align: center; /* Center align the paragraph */
+}
+
+.overlay h3:hover {
+  color: #fec86a;
+}
+
+.overlay p.show {
+  display: block;
+}
+
+.overlay button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background-color: #0056b3;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #fec86a;
+  border: 1px solid #fec86a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.portfolio button {
+  margin-top: 50px;
+  height: 48px;
+  width: 144px;
+  background-color: #fec86a;
+  border: 1px solid #fec86a;
+  border-radius: 8px;
+  color: #34353b;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+.portfolio button:hover {
+  background-color: #cc9e4e;
+}
+
+
+
+
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  width: 100vw;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 0;
+}
+
+
+.line {
+  height: 2.5px;
+  width: 10%;
+  background-color: #fec86a;
+  margin-right: 32px;
+  max-width: 400px;
+}
+.darker-div {
+  background-color: #34353a;
+  width: 100vw;
+  height: 10vh;
+}
+
+.experience h1 {
+  font-size: calc(2rem + 1vw); 
+  position: absolute;
+  color: #fbfbfb;
+  font-size: 56px;
+  font-family: "Libre Baskerville", serif;
+  transform: translate(140%, -50%);
+  top: 10%;
+  left: 15%;
+  align-self: center;
+  
+}
+
+.lighter-div {
+  background-color: #3d3e42;
+  width: 100vw;
+  padding: 15vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.lighter-div .exp {
+  height: 30vh;
+  width: 80%;
+  position: relative;
+  margin-left: 20vh;
+  max-width: 600vh;
+}
+
+.exp h2 {
+  color: #fec86a;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.exp h2::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  color: #fec86a;
+  background-color: #fec86a;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 7.5%;
+  left: -5%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 5px #ffb129;
+}
+.exp p{
+  width: 90%;
+}
+.exp-desc::before {
+  content: "";
+  height: 195px;
+  width: 2.5px;
+  background-color: #d3cfc8;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: -5%;
+}
+.exp-desc h3 {
+  color: #d39326;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.exp-desc h5 {
+  color: #fbfbfb;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.exp-desc p {
+  color: #fbfbfb;
+  font-size: 16;
+  font-weight: 400;
+}
+
+.contact-me {
+  width: 100vw;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.resume {
+  width: 100vw;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-me h1 {
+  font-size: 56px;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+}
+.resume h1 {
+  font-size: 56vh;
+  color: #fbfbfb;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  padding: 6vw;
+}
+.contact {
+  display: flex;
+  gap: 24px;
+  
+}
+
+.contact-card {
+  background-color: #fec86a;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  color: #34353b;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-card:hover {
+  background-color: #cc9e4e;
+}
+
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125vh; /* Adjust height as needed */
+}
+
+.resume button {
+  margin-top: 15vh;
+  height: 48px;
+  width: 144px;
+  background-color: #fec86a;
+  border: 1px solid #fec86a;
+  border-radius: 8px;
+  color: #34353b;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+.resume button:hover {
+  background-color: #cc9e4e;
+}
+.hidden {
+  display: 5;
+}
+
+
+.portfolio-card {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  background-color: #5b5c5e;
+  border-radius: 20px;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.portfolio-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  
+}
+
+.card-front {
+  z-index: 2;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+
+  background-color: #fff;
+  color: #757575; /* Grey text color */
+  padding: 1vh;
+  text-align: start; /* Center align the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay h3 {
+  color: #f6eeee;
+}
+.overlay h5 {
+  color: #aaa29d;
+}
+
+ .portfolio-card .overlay p {
+  color: #fdf1f1;
+  display: none;
+}
+
+.portfolio-card.flipped .overlay p {
+  display: block;
+}
+
+/* Add your CSS styles here */
+
+/* Add your CSS styles here */
+
+/* For smaller screens */
+@media only screen and (min-width: 1024px) and (max-width: 1672px) {
+  header {
+    padding: 2vw 5vw; /* Adjust padding based on screen size */
+  }
+
+  header nav img {
+    height: 8vw; /* Adjust logo size */
+    width: 8vw;
+  }
+
+  .landing .intro h3 {
+    font-size: 1.5vw;
+  }
+
+  .landing .intro h5 {
+    font-size: 1vw;
+  }
+
+  .landing .intro h3 span {
+    font-size: 2.5vw;
+  }
+
+  .about, .skills, .portfolio, .experience, .contact-me, .resume {
+    padding: 5vw; /* Adjust section paddings */
+  }
+
+  .about h1, .skills h1, .portfolio h1, .experience h1, .contact-me h1, .resume h1 {
+    font-size: 2.5vw; /* Adjust heading sizes */
+  }
+
+  
+}
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  /* Adjustments for content sizing, spacing, and layout for 13-inch Mac screens */
+  /* This range covers the common effective resolutions seen on 13-inch MacBooks when scaled */
+
+
+
+  header, .about, .skills, .portfolio, .experience, .contact-me, .resume {
+      padding: 3vw; /* Adjust padding to ensure content doesn't touch the edges */
+  }
+
+}
+
+/* Base styles */
+/* Your existing CSS here */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+  .contact-me, .resume {
+    padding: 50px; /* Reduced padding */
+  }
+  .contact-me h1, .resume h1 {
+    font-size: 48px; /* Slightly smaller font size */
+  }
+  .portfolio-card {
+    height: 25vw; /* Adjust size for better visibility */
+    width: 25vw;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 768px) {
+  .contact-me, .resume {
+    padding: 20px; /* Further reduced padding for smaller screens */
+  }
+  .contact-me h1, .resume h1 {
+    font-size: 32px; /* Adjust font size for smaller displays */
+  }
+  .contact {
+    flex-direction: column; /* Stack contact items vertically */
+  }
+  .portfolio-card {
+    height: 30vw; /* Adjust to maintain usability on small screens */
+    width: 30vw;
+  }
+}
+
+
+.intro{
+  width: 76%;
+}
+
+.download-button {
+  display: inline-block;  /* Allows buttons to be side by side */
+  margin: 0 10px;         /* Adds space between buttons */
+  padding: 10px 20px;     /* Adjusts padding for better appearance */
+  border: none;           /* Removes default border */
+  border-radius: 5px;     /* Rounds corners */
+  text-align: center;     /* Centers text within the button */
+  text-decoration: none;  /* Removes underline from links, if applicable */
+  cursor: pointer;        /* Changes cursor to pointer on hover */
+}
+
+.experience-title{
+  display: flex;
+  width: auto;justify-content: center;
+  align-items: center;
+}

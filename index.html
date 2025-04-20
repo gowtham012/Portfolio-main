@@ -1,532 +1,1278 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GKS</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-   
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <header class="title-bar">
-        
-        <nav>
-            <img src="asset/logo1.png" alt="">
-            <ul>
-                <li><a href="#" class="active">About</a></li>
-                <li><a href="#skills-loc">Skills</a></li>
-                <li><a href="#portfolio-loc">Projects</a></li>
-                <li><a href="#experience-loc">Experience</a></li>
-                
-                <li><a href="#contact-loc">Contact</a></li>
-                
-            </ul>
-            <div class="certification">
-                <img src="asset/aws.png" alt="">
-                <img src="asset/hedera.png" alt="">
+  <body>
+    <!-- Add this right after the opening body tag -->
+    <canvas id="waveCanvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+      <nav>
+        <a href="#" class="nav-logo">
+          <div class="logo-text">
+            <span class="logo-letter">G</span>
+            <div class="morse-code">
+              <!-- OWTHA in morse: --- .-- - .... .- -->
+              <div class="dash"></div>
+              <div class="dot"></div>
+              <div class="dash"></div>
+              <div class="dot"></div>
             </div>
-            <!-- <div class="se  arch">
-                
-            </div> -->
-        </nav>
-        <div class="landing">
-            
-            <div class="intro">
-                <div class="command-prompt">
-                    <h5>                            Hi, my name is</h5>
-                </div>
-                <br>
-                <h3><Span>Gowtham Kumar Solleti</Span></h3></Span>
-                <h4>Software Developer</h4><br>
-                <div class="intro">
-                <h5>A driven software developer, recent MS Computer Science graduate, and AWS Certified Associate Developer with expertise in full-stack web development, currently working on innovative web3 and DevOps self-projects.</h5>
-                </div>
-                <div class="download-button">
-                <button onclick="downloadResume()">Download Resume </button>
-                <button onclick="downloadaws()">AWS Certificate </button>
-                </div>
+            <span class="logo-letter">M</span>
+            <div class="name-text">
+              <span class="animate-letter">G</span>
+              <span class="animate-letter">o</span>
+              <span class="animate-letter">w</span>
+              <span class="animate-letter">t</span>
+              <span class="animate-letter">h</span>
+              <span class="animate-letter">a</span>
+              <span class="animate-letter">m</span>
             </div>
-            <div class="socials">
-                <div class="line"></div>
-                
-                <a href="https://github.com/gowtham012" style="text-decoration: none;"><i class="ri-github-fill"></i></a>
-                <a href="https://twitter.com/SolletiKumar" style="text-decoration: none;"><i class="ri-twitter-x-fill"></i></a>
-                <a href="https://www.linkedin.com/in/gowtham-kumar-solleti/" style="text-decoration: none;"><i class="ri-linkedin-fill"></i></a>
-            
-            
-           
-            
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="mobile-certifications">
+            <div class="certification-badge">
+              <img
+                src="asset/aws copy.png"
+                alt="AWS Certified Developer Associate"
+              />
             </div>
+            <div class="certification-badge">
+              <img src="asset/hedera copy.png" alt="Hedera Certified" />
+            </div>
+          </div>
         </div>
-    </header>
-    <section class="about">
-        <h1>About</h1>
-        <div class="description">
+
+        <div class="mobile-menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+
+      <!-- Add background stars -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+
+      <div class="certifications">
+        <div class="certification-badges">
+          <a
+            href="#"
+            onclick="downloadaws()"
+            class="certification-badge"
+            title="AWS Certified Developer"
+          >
+            <img src="asset/aws copy.png" alt="AWS Certification" />
+            <span class="certification-title">AWS Certified Developer</span>
+          </a>
+          <a href="#" class="certification-badge" title="Hedera Certified">
+            <img src="asset/hedera copy.png" alt="Hedera Certification" />
+            <span class="certification-title">Hedera Certified</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="command-prompt" style="margin-top: 25px;">
+            <h5 class="text-gradient" >Hi, my name is</h5>
+          </div>
+          <h1 class="hero-title">
+            Gowtham Kumar <span class="text-gradient">Solleti</span>
+          </h1>
+          <h2 class="hero-subtitle">Founding Software Engineer</h2>
+          <p class="hero-description">
+            A results‑driven Software Engineer and recent M.S. Computer Science graduate (Binghamton '24), AWS Certified Associate Developer with 2+ years of hands‑on experience architecting Java, Python and Go microservices on AWS & GCP. Skilled in TDD‑driven CI/CD pipelines and distributed systems scaling to 500 K MAU, currently contributing AI‑agent features to Google's ADK and exploring cutting‑edge Web3 and DevOps self‑projects.
+          </p>
+          <div class="hero-cta-group">
+            <button class="download-button" onclick="downloadResume()">
+              Download Resume
+            </button>
+          </div>
+          <div class="socials">
             <div class="line"></div>
-            <p>
-            
-                A driven Software Developer with expertise in web development and an AWS Certified Associate Developer, I recently graduated with a Master's degree in Computer Science from Binghamton University.During my studies, I honed my skills in software development and full-stack engineering, while also cultivating a deep passion for DevOps and blockchain innovation. My current projects include a cutting-edge blockchain application integrated into a web platform, showcasing my ability to blend technology with practical solutions. Explore my portfolio to see how I transform complex tech ideas into actionable, impactful solutions.
-                <br><br>Beyond academics, I've taken on leadership roles within the computer science department. As <b>President of the Graduate Student Organization </b> for Computer Science and a Student Advisory Committee Member, I've demonstrated my communication and teamwork abilities while advocating for student needs.<br><br>
-               
-                Currently, I am working on my capstone project on Launched an E-Voting Decentralized Application leveraging blockchain technology for secure, transparent, and tamper-proof voting processes, ensuring integrity and anonymity.</p>
-               
-            </div>
-    </section>
-    <section class="skills" id="skills-loc">
-        <h1>My Skills</h1>
-        
-        <div class="cards">
-            <div class="skill-card">
-                <img src="asset/python.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/CPP.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/java.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/mysql.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/R_(programming_language)-Logo.wine.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/postgresql-svgrepo-com.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/solidity-svgrepo-com.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/amazon-web-services.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/azure-1-logo-svgrepo-com.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/gcp-svgrepo-com.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/html.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/css.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/js.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/django.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/flask.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/express.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/react-svgrepo-com.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/node-js-svgrepo-com.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/jquery-svgrepo-com.svg" alt="">
-            </div>
-
-            <div class="skill-card">
-                <img src="asset/Android Studio.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/git.svg" alt="">
-            </div>
-            
-            
-            <div class="skill-card">
-                <img src="asset/linux-96.png" alt="">
-            </div>
-            
-            <div class="skill-card">
-                <img src="asset/mongodb.svg" alt="">
-            </div>
-            
-            <div class="skill-card">
-                <img src="asset/PHP-Logo.wine.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/hadoop-svgrepo-com.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/Jenkins.svg" alt="">
-                
-            </div>
-            <div class="skill-card">
-                <img src="asset/tableau-icon-svgrepo-com.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/tensorflow-svgrepo-com.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/NumPy.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/PyTorch.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/scikit-learn.svg" alt="">
-            </div>
-            
-            <div class="skill-card">
-                <img src="asset/Kubernetes-Logo.wine.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/docker.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/terraform.svg" alt="">
-            </div>
-            <div class="skill-card">
-                <img src="asset/kafka.svg" alt="">
-            </div>
-            
-            
-            
+            <a
+              href="https://github.com/gowtham012"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="ri-github-fill"></i>
+            </a>
+            <a
+              href="https://twitter.com/SolletiKumar"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="ri-twitter-x-fill"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gowtham-kumar-solleti/"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="ri-linkedin-fill"></i>
+            </a>
+          </div>
         </div>
-    </section>
-    <section class="portfolio" id="portfolio-loc">
-        <h1>Projects</h1>
-        <div class="portfolio-cards">
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/ad.jpeg" alt="">
-                        <div class="overlay">
-                            <h3>Decentralized Time Capsule on AWS</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>May 2024 – Present</h5>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <!-- Back content -->
 
-                        <h5>(AWS Blockchain | ReactJS | CSS | AWS Lambda | AWS S3 | AWS CloudTrail | AWS KMS | AWS Cognito)</h5>
-                        <br>
-                        <p>● Developed a web application enabling individuals and government bodies to create decentralized time capsules for storing digital
-                            memories, messages, and documents for future selves or family members.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/image copy.png" alt="">
-                        <div class="overlay">
-                            <h3>E-Voting Decentralized application using AWS</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>Oct 2023 – May 2024</h5>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <!-- Back content -->
-
-                        <h5>(AWS Blockchain | HTML | CSS | AWS Lambda | AWS S3 | AWS CloudTrail | AWS KMS | AWS Cognito)</h5>
-                        <br>
-                        <p>● Launched an E-Voting Decentralized Application leveraging blockchain technology for secure, transparent, and tamper-proof voting
-                            processes, ensuring integrity and anonymity.</p>
-                            <br>
-                        <p>● Exploited Amazon Managed Blockchain, AWS Lambda, S3, Cognito, KMS, and other services for secure storage, user authentication,
-                            cryptographic security, and tokenized access and smart contracts for core voting functionality.</p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/images/martin-martz-3_x1FRGAEwY-unsplash.jpg" alt="">
-                        <div class="overlay">
-                            <h3>Audio Room</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>Jan 2023 – May 2023</h5>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <!-- Back content -->
-                        <h5>(Docker | DynamoDB | AWS Load Balancer | WebRtc | Fargate | ReactJS)</h5>
-                        <br>
-                        <p>● Architected a cloud-based audio room with WebRTC, network protocols, and server architecture, empowering remote teams with superior
-                            communication.</p>
-                            <br>
-
-                        <p>● Enhanced user experience and engagement by deploying inventive features, resulting in a 30% rise in engagement and a 20% decline in
-                            complaints.</p>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/images/warren-umoh-pnMjGMOs2Xw-unsplash.jpg" alt="">
-                        <div class="overlay">
-                            <h3>Cricket Data Analysis</h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>Sept 2022 – Dec 2022</h5>
-                        </div>
-                    </div>
-                    <div class=".portfolio-card card-back">
-                        <!-- Back content -->
-                        <h5>(MongoDB Atlas| MongoDB Compass)</h5>
-                        <br>
-                        <p>● Conducted comprehensive analysis of cricket data spanning 2008-2017, facilitating the identification top performers and team statistics.</p>
-                            <br>
-
-                        <p>● Orchestrated the implementation of NoSql(MongoDB) tools, leading to a 30% improvement in analysis and decision-making,
-                            empowering the organization to make data-backed decisions for enhanced operational effectiveness.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/images/warren-umoh-VL12rhr4mi0-unsplash.jpg" alt="">
-                        <div class="overlay">
-                            <h3>Image Classification using Normalizing Flows </h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>Sept 2022 – Dec 2022</h5>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <!-- Back content -->
-                        <h5>(MNIST | CIFAR 10 | Real NVP) </h5>
-                        <br>
-                        <p>● Applied Real NVP for supervised classification on two-moon, circles, and pinwheel datasets, producing requested figures.</p>
-
-                        <p>● Incorporated Real VP for high-accuracy classification on the MIST dataset, alongside latent space interpolation for image generation
-                            across specified classes.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" onclick="toggleCard(this)">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="asset/as.jpeg" alt="">
-                        <div class="overlay">
-                            <h3>Covid Smart Recommendation </h3>
-                            <br>
-                            <br>
-                            <br>
-                            <h5>Jan 2022 – Jun 2022</h5>
-                          
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <!-- Back content -->
-                        <h5> (TensorFlow Resnet-50 | Flask | Requests | Payment Gateways)</h5>
-                        <br>
-                        <p>● Engineered a precise COVID-19 detection system utilizing CT scan images, employing a ResNet-50 algorithm to scrutinize lung CT
-                            scans and seamlessly integrating into a web interface and integrated with interactive chatbot, secure donation payment, and news
-                            source redirection. Reached 98% CT scan analysis accuracy, consolidating data into a user-friendly resource.</p>
-                    </div>
-                </div>
-            </div>
-            
-           
+        <div class="hero-image">
+          <div class="image-wrapper">
+            <img src="asset/IMG_5957.jpg" alt="Gowtham Kumar Solleti" />
+          </div>
+          <div class="image-shapes">
+            <div class="img-shape img-shape-1"></div>
+            <div class="img-shape img-shape-2"></div>
+            <div class="img-shape img-shape-3"></div>
+          </div>
         </div>
-       
+      </div>
     </section>
- 
-    <section class="experience" id="experience-loc">
-        <br>
-        <br>
-       
-        
-        <div class="darker-div"></div>
-        <h1 > Experience</h1>
-        
-        <div class="lighter-div">
-            <div class="exp">
-                
-                
-                <h2>Full-Stack Developer</h2>
-                <div class="exp-desc">
-                <div>
-                
-                <h3 style="display: inline;">Lecherro &nbsp&nbsp</h3>
-                <h5 style="display: inline;"> - Binghamton, Newyork</h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <h3 style="display: inline;">December 2023 - May 2024</h3>
-                
-                </div>
-                <br>
-                <p> ●	Sketched an innovative e-commerce platform facilitating daily delivery of fresh milk to urban consumers, addressing the gap in availability of pure, unprocessed milk.
-                    <br><br>
-                    ●	Implemented a subscription model allowing users to schedule daily deliveries within a 15-minute timeframe, utilizing strategically located Lecherro spots every 5km radius for efficient distribution. 
-                    <br><br>
-                    ●	Interspersed Flask, HTML, CSS, and AWS services (RDS, S3, CloudFront) for a seamless user experience, bolstered by 24/7 customer support via the chatbot "Your Lecherro," enhancing user satisfaction and engagement.
-                    <br><br>
-                    ●	Achieved an 80% increase in user engagement by emphasizing organic and fresh milk options, demonstrating consumer preference for healthier alternatives over processed varieties.
-                    </p>
-                </div>
-            </div>
 
-        
-        <div class="exp">
-                
-                
-            <h2>Software Developer Intern</h2>
-            <div class="exp-desc">
-                <div>
-                
-                <h3 style="display: inline;">Sodexo &nbsp&nbsp</h3>
-                <h5 style="display: inline;"> - Binghamton, Newyork</h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <h3 style="display: inline;">Aug 2023 - December 2023</h3>
-                
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+          <div class="skills-header">
+            <h2 class="portfolio-title">My Skills</h2>
+            <p class="skills-subtitle">
+              A comprehensive showcase of my technical expertise and tools I work with
+            </p>
+          </div>
+          <div class="skills-grid">
+            <!-- Programming Languages -->
+            <div class="skill-category" style="--delay: 0">
+              <div class="category-header">
+                <i class="ri-code-line category-icon"></i>
+                <h3 class="category-title">Languages</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Go</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
                 </div>
-                <br>
-                <p> ●	Designed a website with a team of 5 for Binghamton University Dining Services using ReactJS and JavaScript, resulting in a 50% increase in order counts compared to the previous year.
-                    <br><br>
-                    ●	Developed a seamless online platform that streamlined event and catering registrations, reducing the time and effort required for high-profile users.
-                    <br><br>
-                    ●	Integrated AWS services including RDS, Route 53, S3, and CloudFront to ensure low latency and high reliability for user interactions and IBM Watson Cloud's chatbot service to enhance user support and interaction.
-                    <br><br>
-                    ●	Facilitated easier event planning and poster orders through an intuitive web interface, significantly improving the user experience for Binghamton University event organizers.
-                    </p>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Java 17</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.8"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Python 3</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript/TypeScript</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Shell/Bash</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">HTML5/CSS3</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 1.0"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-            <div class="exp">
+      
+            <!-- Frontend -->
+            <div class="skill-category" style="--delay: 1">
+              <div class="category-header">
+                <i class="ri-layout-4-line category-icon"></i>
+                <h3 class="category-title">Frontend</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">React / Next.js</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">React Native</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">ES2023</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Redux / Zustand</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Tailwind CSS</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Jest & Web Vitals</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Backend -->
+            <div class="skill-category" style="--delay: 2">
+              <div class="category-header">
+                <i class="ri-server-line category-icon"></i>
+                <h3 class="category-title">Backend</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Spring Boot</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">FastAPI / Flask</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Node.js / Express</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.8"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">GraphQL / REST / gRPC</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Kafka</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">OpenAPI</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Web3.js</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Cloud & DevOps -->
+            <div class="skill-category" style="--delay: 3">
+              <div class="category-header">
+                <i class="ri-cloud-line category-icon"></i>
+                <h3 class="category-title">Cloud & DevOps</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">AWS (EKS, EC2, Lambda, S3, DynamoDB)</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">GCP (GKE, Cloud Run, Pub/Sub)</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Docker & Kubernetes</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Terraform & Helm</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.8"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">CI/CD (GitHub Actions, Cloud Build)</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Blue-green & Canary Deploys</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Prometheus & Grafana</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">OpenTelemetry</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Database & Caching -->
+            <div class="skill-category" style="--delay: 4">
+              <div class="category-header">
+                <i class="ri-database-2-line category-icon"></i>
+                <h3 class="category-title">Database & Caching</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">PostgreSQL & MySQL</span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">DynamoDB & MongoDB Atlas</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Redis & ElastiCache</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">S3 & Parquet Data Lakes</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Testing & Quality -->
+            <div class="skill-category" style="--delay: 5">
+              <div class="category-header">
+                <i class="ri-test-tube-line category-icon"></i>
+                <h3 class="category-title">Testing & QA</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">TDD/BDD</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JUnit & PyTest</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">SonarQube</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">k6 Load Testing</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Security & Privacy -->
+            <div class="skill-category" style="--delay: 6">
+              <div class="category-header">
+                <i class="ri-shield-check-line category-icon"></i>
+                <h3 class="category-title">Security & Privacy</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JWT & OAuth 2.0/OIDC</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">AWS KMS & Vault</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">HashiCorp Vault</span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="--progress: 0.85"></div>
+                    </div>
+                  </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">AWS Cognito</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.9"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Data & ML -->
+            <div class="skill-category" style="--delay: 7">
+              <div class="category-header">
+                <i class="ri-bar-chart-line category-icon"></i>
+                <h3 class="category-title">Data & ML</h3>
+              </div>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Pandas & NumPy</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Vertex AI & OpenAI API</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Google ADK & Agentic AI</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">RAG & ReAct</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="--progress: 0.7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <!-- Add shooting stars -->
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+
+      <!-- Add background stars -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="container">
+        <div class="portfolio-header">
+          <h2 class="portfolio-title">Featured Projects</h2>
+          <p class="portfolio-subtitle">
+            Innovative solutions I've crafted with code
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+            <article class="portfolio-card">
+                <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Google ADK (Open Source Contribution)</div>
+                <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Google ADK Agentic AI</h3>
                 
-                
-                    <h2>Student Advisory Committee Member (Computer Science)</h2>
-                <div class="exp-desc">
-                    <div>
+                <p class="project-description">
+                    I began contributing to Google’s open‑source Agent Development Kit (ADK) project ten days ago. Since then, I’ve cloned the repository, configured local builds, and explored its modular architecture and plugin interfaces. I’m currently mapping agent lifecycles, tracing core APIs, and reviewing documentation to gain a holistic understanding. I’m also sketching design diagrams, drafting integration blueprints, and outlining comprehensive test plans before submitting my first feature pull request. ​​
                     
-                    <h3 style="display: inline;">Binghamton University &nbsp&nbsp</h3>
-                    <h5 style="display: inline;"> - Binghamton, Newyork</h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <h3 style="display: inline;">Aug 2023 - May 2024</h3>
-                    
-                    </div>
-                    <br>
-                    <p>● Actively participate in the Student Advisory Committee - computer science, working collaboratively with fellow members, faculty, and university administration to voice student concerns and suggestions. Contribute to discussions on coursework, programs, and campus initiatives, offering insights to enhance the student experience.<br>
-                        <br>
-                        ● Serve as a liaison between students and the faculty, facilitating open channels of communication. Engage with students through surveys, town hall meetings, and one-on-one interactions to gather feedback. Present findings and recommendations to university officials in a clear and concise manner, advocating for positive changes that align with student interests.</p>
+                </p>
+                <div class="tech-stack">
+                  <span class="tech-item">Python</span>
+                  <span class="tech-item">JS</span>
+                  <span class="tech-item">HTML</span>
+     
+                  
                 </div>
+                <div class="project-links">
+                    <a href="https://github.com/gowtham012/adk-python" class="project-link">
+                      <i class="ri-external-link-line"></i>
+                      <span>View Project</span>
+                    </a>
+                    <a href="https://github.com/google/adk-python" class="project-link">
+                      <i class="ri-github-line"></i>
+                      <span>Source Code</span>
+                    </a>
+                  </div>
+                <div class="project-image">
+                  <img
+                    src="asset/adk.png"
+                    alt="Cloud Infrastructure Preview"
+                  />
+                  <div class="image-overlay"></div>
+                </div>
+              </article>
+          <!-- Portfolio Website -->
+          <article class="portfolio-card">
+            <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Full Stack Development</div>
+            <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Job Easy.AI</h3>
+            <p class="project-description">
+                JobEasy.ai uses RAG to ingest resumes, job listings, and company data. Using LLMs with the ReAct framework, it autonomously crafts and submits applications—selecting skills, drafting personalized cover letters, and interacting with APIs or web forms to scale application volume. <!-- The result is a high‑velocity, data‑driven job search assistant that maximizes match accuracy and application throughput with minimal manual effort. -->
+                            
+            </p>
+            <div class="tech-stack">
+              <span class="tech-item">React</span>
+              <span class="tech-item">ReAct</span>
+              <span class="tech-item">RAG</span>
+              <span class="tech-item">Google ADK & Agentic AI</span>
+              <span class="tech-item">OpenAI API</span>
+              <span class="tech-item">LLM's</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Flask</span>
+              <span class="tech-item">PostgreSQL</span>
+              <span class="tech-item">AWS</span>
             </div>
-            
-            <div class="exp">
-                <h2>GSOCS President</h2>
-                <div class="exp-desc">
-                    <div>
-                    <h3 style="display: inline;">Graduate Student Organization at Binghamton University </h3>
-                    &nbsp
-                    <h5 style="display: inline;">     - Binghamton, Newyork</h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <h3 style="display: inline;"></h3style> May 2023 - May 2024</h3>
+            <div class="project-links">
+              <a href="https://github.com/gowtham012/AIAGENTS" class="project-link">
+                <i class="ri-external-link-line"></i>
+                <span>View Project</span>
+              </a>
+              <a href="https://github.com/gowtham012/AIAGENTS" class="project-link">
+                <i class="ri-github-line"></i>
+                <span>Source Code</span>
+              </a>
+            </div>
+            <div class="project-image">
+              <img src="asset/job.jpeg" alt="Portfolio Website Preview" />
+              <div class="image-overlay"></div>
+            </div>
+          </article>
 
-                    
-                    </div>
-                    <br>
-                    <p>● Collaborated with faculty and administrators to advocate for the needs and interests of computer science graduate students, resulting in improved resources and support.<br>
-                        <br>
-                        ● Fostered a sense of community among computer science graduate students by organizing social events, seminars, and collaborative projects.<br>
-                        <br>
-                        ● Established and maintained effective communication channels like Slack and Twitter, utilizing both online platforms and in-person interactions to keep members informed and engaged.<br>
-                        <br>
-                        ● Coordinated with industry professionals and alumni to arrange guest lectures and career panels, offering valuable insights into different career paths in computer science.</p>
-                </div>
+          <!-- DEX Platform -->
+          <article class="portfolio-card">
+                <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Web3 & Blockchain</div>
+                <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">DApp E-voting Platform</h3>
+            <p class="project-description">
+                Built a blockchain‑based voting DApp using Solidity smart contracts on AWS, ensuring every ballot is tamper‑evident and transparent.
+                It integrates RESTful APIs with PostgreSQL for secure, scalable user authentication and end‑to‑end vote integrity.
+                Designed for high reliability and auditability, the system delivers trustless vote tallying and cryptographic proof of election results.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-item">Solidity</span>
+              <span class="tech-item">Web3.js</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">Ethereum, MetaMask</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Flask</span>
+              <span class="tech-item">Truffle</span>
+              <span class="tech-item">DynamoDB</span>
+              <span class="tech-item">AWS</span>
             </div>
-            
-            <div class="exp">
-                <h2>Artificial Intelligence Intern</h2>
-                <div class="exp-desc">
-                    <div>
-                        <h3 style="display: inline;">Tavant Technologies</h3>
-                        &nbsp&nbsp
-                        <h5 style="display: inline;"> - Bangalore, India</h5>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        <h3 style="display: inline;">Jan 2022 - May 2022</h3>
-                        
-                      </div>
-                      
-                      <br>
-                      
-                    <!-- <h5>Bangalore, India</h5> -->
-                    <p> ● Collaborated with the AI research team to gain hands-on experience with data science concepts.<br>
-                        <br>
-                        ● Utilized data science life cycle techniques to clean and process 6 different OEM datasets, conducted modeling, and merge them into a single cohesive dataset using NumPy and Pandas.<br>
-                        <br>
-                        ● Developed a machine learning algorithm utilizing the random forest model on a revised single dataset to predict service contract pricing for varied vehicles in the automobile industry, aiding in the establishment of accurate pricing for automotive services.<br>
-                        <br>
-                        ● Achieved a significant improvement in accuracy during the internship, with an increase of up to 95%.</p>
-                </div>
+            <div class="project-links">
+              <a href="https://github.com/gowtham012/final-project" class="project-link">
+                <i class="ri-external-link-line"></i>
+                <span>View Project</span>
+              </a>
+              <a href="https://github.com/gowtham012/final-project" class="project-link">
+                <i class="ri-github-line"></i>
+                <span>Source Code</span>
+              </a>
             </div>
-            
-            
-        </div>
-    </section>
-    <!-- <section class="resume" id="resume-loc">
-        <h1>Resume</h1>
-        <div class="pdf-container">
-            <embed src="asset/GOWTHAM_KUMAR_SOLLETI_resume.pdf" type="application/pdf" width="800px" height="1090px" />
-        </div>
-        <button onclick="downloadResume()">Download </button>
-    </section> -->
-    
-    <section class="contact-me" id="contact-loc">
-        <h1>Contact Me</h1>
-        <div class="contact">
-            <div class="contact">
-                <a href="mailto:gsollet1@binghamton.edu" class="contact-card">
-                    <i class="ri-message-3-line"></i>
-                    <p>gsollet1@binghamton.edu</p>
+            <div class="project-image">
+              <img src="asset/vote copy.png" alt="DEX Platform Preview" />
+              <div class="image-overlay"></div>
+            </div>
+          </article>
+
+          <!-- Cloud Infrastructure -->
+          <article class="portfolio-card">
+            <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Mobile & Web Development</div>
+            <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Audio Rooms</h3>
+            <p class="project-description">
+                WebRTC audio rooms enable low‑latency, peer‑to‑peer voice chat in browsers or mobile apps—no downloads. Rooms establish end‑to‑end encrypted connections; dynamic mesh or SFU topologies optimize bandwidth. Participants can mute/unmute and switch channels on the fly, while adaptive bitrate and echo cancellation deliver clear, reliable audio across diverse network conditions HD.?
+            </p>
+            <div class="tech-stack">
+              <span class="tech-item">AWS</span>
+              <span class="tech-item">React Native</span>
+              <span class="tech-item">WebRTC</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Flask</span>
+              <span class="tech-item">PostgreSQL</span>
+              <span class="tech-item">Fargate</span>
+              <span class="tech-item">Docker</span>
+              
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/gowtham012/Audio_rooms" class="project-link">
+                  <i class="ri-external-link-line"></i>
+                  <span>View Project</span>
                 </a>
-                <a href="mailto:gouthamsolleti3@gmail.com" class="contact-card">
-                    <i class="ri-message-3-line"></i>
-                    <p>gouthamsolleti3@gmail.com</p>
+                <a href="https://github.com/gowtham012/Audio_rooms" class="project-link">
+                  <i class="ri-github-line"></i>
+                  <span>Source Code</span>
                 </a>
+              </div>
+            <div class="project-image">
+              <img
+                src="asset/webrtc.png"
+                alt="Cloud Infrastructure Preview"
+              />
+              <div class="image-overlay"></div>
             </div>
-            
-            <div class="contact-card">
-                <i class="ri-phone-line"></i>
-                <p>+1(607)744-8152</p>
+          </article>
+
+          <!-- Cloud Infrastructure -->
+          <article class="portfolio-card">
+            <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Automation & Scraping</div>
+            <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Recipe Scraper</h3>
+            <p class="project-description">
+                Built a Python‑powered recipe scraper that crawled and parsed over 220,000 recipes from diverse cooking sites. It leverages asyncio and aiohttp for high‑speed concurrent fetching, BeautifulSoup for robust HTML parsing, and SQLite for structured storage. Intelligent retry logic, rate‑limiting, user‑agent rotation, and detailed logging ensure uninterrupted, scalable scraping.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-item">Selenium</span>
+              <span class="tech-item">BeautifulSoup</span>
+              <span class="tech-item">Pandas</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Scrapy</span>
+              <span class="tech-item">ChromeDriver</span>
+              <span class="tech-item">Flask</span>
+              <span class="tech-item">PostgreSQL</span>
+
+              
             </div>
-            <div class="contact-card">
-                <i class="ri-map-pin-3-line"></i>
-                <p>New York City, Newyork</p>
+            <div class="project-links">
+                <a href="https://github.com/gowtham012/RecipesScrape" class="project-link">
+                  <i class="ri-external-link-line"></i>
+                  <span>View Project</span>
+                </a>
+                <a href="https://github.com/gowtham012/RecipesScrape" class="project-link">
+                  <i class="ri-github-line"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            <div class="project-image">
+              <img
+                src="asset/recipe.jpeg"
+                alt="Cloud Infrastructure Preview"
+              />
+              <div class="image-overlay"></div>
             </div>
+          </article>
+
+
+
+          <!-- Cloud Infrastructure -
+
+          <!-- Cloud Infrastructure -->
+          <article class="portfolio-card">
+            <div class="project-category" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Portfolio Website</div>
+            <h3 class="project-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Personal Portfolio</h3>
+            <p class="project-description">
+                A modern, responsive portfolio website built with HTML, CSS, and JavaScript featuring smooth animations. It includes filterable project galleries, case-study modals, and embedded PDF resume viewing. Mobile-first design delivers optimal UX across devices, using CSS Grid, Flexbox, and performant components. It also uses lazy-loading and optimized assets for fast page loads. SEO.!
+            </p>
+            <div class="tech-stack">
+              <span class="tech-item">HTML</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">CSS</span>
+              <span class="tech-item">JS</span>
+              <span class="tech-item">MySQL</span>
+              <span class="tech-item">GitHub Pages</span>
+
+              
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/gowtham012/Portfolio-main" class="project-link">
+                  <i class="ri-external-link-line"></i>
+                  <span>View Project</span>
+                </a>
+                <a href="https://github.com/gowtham012/Portfolio-main" class="project-link">
+                  <i class="ri-github-line"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            <div class="project-image">
+              <img
+                src="asset/portfolio.png"
+                alt="Cloud Infrastructure Preview"
+              />
+              <div class="image-overlay"></div>
+            </div>
+          </article>
         </div>
+
+        <div class="scroll-indicator">
+          <div class="scroll-dot active"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
     </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+      <div class="container">
+        <div class="experience-header">
+          <h2 class="portfolio-title">Experience</h2>
+          <p class="portfolio-subtitle">
+            Showcasing my growth and impact in software engineering
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+          <div class="timeline-line"></div>
+
+          <!-- Software Developer -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Dec 2024 - Present</span>
+              <h3 class="timeline-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Founding Software Engineer</h3>
+              <h4 class="timeline-subtitle" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">MealMatch AI</h4>
+              <p class="timeline-description">
+                At MealMatch AI, architected Go/Python microservices on GKE (gRPC & Pub/Sub) to scale 500 K MAU with 99.9% uptime; built Scrapy pipelines indexing 220 K recipes; engineered Stripe/SAGA payments; integrated Vision API features; automated Terraform CI/CD.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">AWS</span>
+                <span class="timeline-tag">React Native</span>
+                <span class="timeline-tag">Flask</span>
+                <span class="timeline-tag">Go</span>
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">Stripe</span>
+                <span class="timeline-tag">Terraform</span>
+                <span class="timeline-tag">GKE</span>
+                <span class="timeline-tag">Instacart API</span>
+                <span class="timeline-tag">Scrapy</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Graduate Research Assistant -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Dec 2023 - Present</span>
+              <h3 class="timeline-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Co-Founder & Software Engineer</h3>
+              <h4 class="timeline-subtitle" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Lecherro</h4>
+              <p class="timeline-description">
+                Co‑founded Python/FastAPI microservices on AWS EKS with PostgreSQL, serving IoT milk‑meter data at <200 ms p95; shipped React Native apps with QR‑scan labels to 2 K beta users; automated Pandas→S3→Lambda pipelines; built Go/Stripe dynamic pricing; deployed Terraform CI/CD and OpenTelemetry/Grafana dashboards.
+
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">FastAPI</span>
+                <span class="timeline-tag">AWS EKS</span>
+                <span class="timeline-tag">PostgreSQL</span>
+                <span class="timeline-tag">React Native</span>
+                <span class="timeline-tag">QR scanning</span>
+                <span class="timeline-tag">Pandas</span>
+                <span class="timeline-tag">S3</span>
+                <span class="timeline-tag">Lambda</span>
+                <span class="timeline-tag">Go</span>
+                <span class="timeline-tag">Stripe</span>
+                <span class="timeline-tag">Terraform</span>
+                <span class="timeline-tag">GitHub Actions</span>
+                <span class="timeline-tag">Cloud Build</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Engineering Intern -->
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Dec 2023 - Dec 2024</span>
+              <h3 class="timeline-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Software Engineer</h3>
+              <h4 class="timeline-subtitle" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Information Data Systems Inc.</h4>
+              <p class="timeline-description">
+                At IDS, built Solidity smart‑contract backend on Hedera; containerized Go/Python microservices on AWS EKS with gRPC/REST and zero‑downtime blue‑green rollouts; drove Terraform/Helm auto‑scaling; integrated HashiCorp Vault & AWS KMS; created React/Next.js career portal and WebSocket‑driven HR analytics dashboards.
+
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">React</span>
+                <span class="timeline-tag">AWS</span>
+                <span class="timeline-tag">Node.js</span>
+                <span class="timeline-tag">Hedera</span>
+                <span class="timeline-tag">Go</span>
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">AWS EKS</span>
+                <span class="timeline-tag">gRPC</span>
+                <span class="timeline-tag">REST</span>
+                <span class="timeline-tag">Docker</span>
+                <span class="timeline-tag">Terraform</span>
+                <span class="timeline-tag">Helm</span>
+                <span class="timeline-tag">HashiCorp Vault</span>
+                <span class="timeline-tag">AWS KMS</span>
+                <span class="timeline-tag">Next.js</span>
+                <span class="timeline-tag">WebSockets</span>
+                <span class="timeline-tag">DynamoDB Streams</span>
+                <span class="timeline-tag">Lambda</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Aug 2021 - Jul 2022</span>
+              <h3 class="timeline-title" style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Junior Software Engineer</h3>
+              <h4 class="timeline-subtitle" style="color: #c4b294; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">Tavant Technologies</h4>
+              <p class="timeline-description">
+                At Tavant, built AI marketing pipelines with SageMaker & Kinesis; developed React/FastAPI pricing app on AWS Lambda/S3; optimized 2 M+ record ETL with Pandas/Parquet; trained Random Forest model; containerized microservices with Docker/ECS Fargate & Terraform; implemented CloudWatch/X‑Ray tracing and CI/CD.
+
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">FastAPI</span>
+                <span class="timeline-tag">AWS SageMaker</span>
+                <span class="timeline-tag">AWS Kinesis</span>
+                <span class="timeline-tag">AWS Lambda</span>
+                <span class="timeline-tag">AWS S3</span>
+                <span class="timeline-tag">React</span>
+                <span class="timeline-tag">AWS</span>
+                <span class="timeline-tag">Node.js</span>
+                <span class="timeline-tag">Pandas</span>
+                <span class="timeline-tag">Parquet</span>
+                <span class="timeline-tag">Random Forest</span>
+                <span class="timeline-tag">Docker</span>
+                <span class="timeline-tag">ECS Fargate</span>
+                <span class="timeline-tag">Terraform</span>
+                <span class="timeline-tag">CloudWatch</span>
+                <span class="timeline-tag">X-Ray</span>
+                <span class="timeline-tag">PyTest</span>
+                <span class="timeline-tag">Cypress</span>
+                <span class="timeline-tag">GitHub Actions</span>
+                <span class="timeline-tag">Scrum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+
+      <!-- Add background stars -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="container">
+        <div class="contact-header">
+          <h2 class="portfolio-title">Get In Touch</h2>
+          <p class="contact-subtitle">Let's collaborate on your next project</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-item">
+              <i class="ri-mail-line info-icon"></i>
+              <div class="info-details">
+                <h3>Email</h3>
+                <a href="mailto:gouthamsolleti3@gmail.com">gouthamsolleti3@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="ri-map-pin-line info-icon"></i>
+              <div class="info-details">
+                <h3>Location</h3>
+                <p>New York, NY</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="ri-github-line info-icon"></i>
+              <div class="info-details">
+                <h3>GitHub</h3>
+                
+                <a href="github.com/gowtham012"
+                  >github.com/gowtham012</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/gouthamsolleti3@gmail.com" method="POST" onsubmit="showThankYouMessage(event)">
+            <input type="hidden" name="_next" value="https://gowtham012.github.io/Portfolio/">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_autoresponse" value="Thank you for your message! I will get back to you soon.">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <div class="error-message" id="name-error" style="display: none; color: #ff4444; margin-top: 5px;">
+                <i class="ri-error-warning-fill" style="color: #ff4444;"></i> Please enter your name
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="email" 
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <div class="error-message" id="email-error" style="display: none; color: #ff4444; margin-top: 5px;">
+                <i class="ri-error-warning-fill" style="color: #ff4444;"></i> Please enter your email
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject" 
+                placeholder="Subject"
+                required
+              />
+              <div class="error-message" id="subject-error" style="display: none; color: #ff4444; margin-top: 5px;">
+                <i class="ri-error-warning-fill" style="color: #ff4444;"></i> Please enter a subject
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <div class="error-message" id="message-error" style="display: none; color: #ff4444; margin-top: 5px;">
+                <i class="ri-error-warning-fill" style="color: #ff4444;"></i> Please enter your message
+              </div>
+            </div>
+            <button type="submit" class="submit-btn" onclick="showThankYouMessage(event)" style="position: relative; overflow: hidden; transition: all 0.3s ease; background: var(--primary); color: rgb(0, 0, 0); border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px var(--primary)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              Send Message
+              <i class="ri-send-plane-line" style="transition: transform 0.3s ease;"></i>
+            </button>
+          </form>
+
+          <div id="thank-you-message" class="thank-you-message" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+              <h3 style="color: #fec86a; text-shadow: 0 0 10px #fec86a; animation: glow 1.5s ease-in-out infinite alternate;">
+                Thank you for your message!
+              </h3>
+              <p style="color: #c4b294; animation: fadeIn 1s ease-in;">
+                I'll get back to you soon.
+              </p>
+            </div>
+          </div>
+
+          <script>
+            function showThankYouMessage(event) {
+              event.preventDefault();
+              const form = document.getElementById('contact-form');
+              const thankYouMessage = document.getElementById('thank-you-message');
+              
+              // Check if all required fields are filled
+              const inputs = form.querySelectorAll('input[required], textarea[required]');
+              let isValid = true;
+              
+              inputs.forEach(input => {
+                const errorElement = document.getElementById(`${input.name}-error`);
+                if (!input.value.trim()) {
+                  isValid = false;
+                  input.style.borderColor = '#ff4444';
+                  errorElement.style.display = 'block';
+                  errorElement.style.animation = 'shake 0.5s ease-in-out';
+                } else {
+                  input.style.borderColor = '';
+                  errorElement.style.display = 'none';
+                }
+              });
+
+              if (!isValid) {
+                return;
+              }
+
+              // Submit the form data
+              const formData = new FormData(form);
+              fetch("https://formsubmit.co/ajax/gouthamsolleti3@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+              })
+              .then(response => response.json())
+              .then(data => {
+                form.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+                form.reset();
+              })
+              .catch(error => console.log(error));
+            }
+          </script>
+
+          <style>
+            @keyframes shake {
+              0%, 100% { transform: translateX(0); }
+              25% { transform: translateX(-10px); }
+              75% { transform: translateX(10px); }
+            }
+            
+            .error-message {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: 0.9em;
+            }
+
+            .form-group input, .form-group textarea {
+              transition: border-color 0.3s ease;
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
-</body>
+    <script src="wave.js"></script>
+  </body>
 </html>

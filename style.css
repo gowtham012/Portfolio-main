@@ -397,20 +397,19 @@ header nav .search i {
 }
 
 .skill-category {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(254, 200, 106, 0.3);
   border: 1px solid rgba(254, 200, 106, 0.5);
-  background: var(--card-bg);
+  background: transparent;
 }
 
 .skill-category:hover::before {
@@ -1939,7 +1938,7 @@ body {
   font-family: var(--font-family);
   line-height: var(--body-line-height);
   color: var(--text-color);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 }
 
 /* Loading Bar */
@@ -2343,20 +2342,19 @@ nav a.active {
 }
 
 .skill-category {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(254, 200, 106, 0.3);
   border: 1px solid rgba(254, 200, 106, 0.5);
-  background: var(--card-bg);
+  background: transparent;
 }
 
 .skill-category:hover::before {
@@ -2750,25 +2748,7 @@ nav a.active {
   }
 
   .skill-category {
-    background: rgba(30, 30, 30, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .skill-category:hover {
-    background: rgba(30, 30, 30, 0.8);
-    border: 1px solid rgba(254, 200, 106, 0.5);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .skill-category {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .skill-category:hover {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(254, 200, 106, 0.5);
+    background-color: #2d2d2d;
   }
 }
 
@@ -4716,5 +4696,251 @@ body {
 
   .project-link:hover {
     background: rgba(255, 193, 7, 0.2);
+  }
+}
+
+/* …and so on, all the way through your final responsive tweaks… */
+
+/* Section Breaker */
+.section-breaker {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.section-breaker .constellation {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-breaker .star-point {
+  width: 6px;
+  height: 6px;
+  background: #fec86a;
+  border-radius: 50%;
+  position: relative;
+  animation: starGlow 2s infinite ease-in-out;
+}
+
+.section-breaker .star-point::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(254, 200, 106, 0.3);
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+  transform: scale(1);
+}
+
+.section-breaker .constellation-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(254, 200, 106, 0.2);
+  transform-origin: left;
+  animation: drawLine 3s infinite ease-in-out;
+}
+
+.section-breaker .center-emblem {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-breaker .center-emblem::before,
+.section-breaker .center-emblem::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fec86a;
+  border-radius: 12px;
+  animation: rotate 4s infinite linear;
+}
+
+.section-breaker .center-emblem::after {
+  animation-direction: reverse;
+  width: 70%;
+  height: 70%;
+}
+
+.section-breaker .cosmic-dust {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(254, 200, 106, 0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.section-breaker .cosmic-dust:nth-child(1) {
+  left: 15%;
+  animation: float 3s infinite ease-in-out;
+}
+.section-breaker .cosmic-dust:nth-child(2) {
+  left: 35%;
+  animation: float 3s infinite ease-in-out 0.5s;
+}
+.section-breaker .cosmic-dust:nth-child(3) {
+  left: 55%;
+  animation: float 3s infinite ease-in-out 1s;
+}
+.section-breaker .cosmic-dust:nth-child(4) {
+  left: 75%;
+  animation: float 3s infinite ease-in-out 1.5s;
+}
+.section-breaker .cosmic-dust:nth-child(5) {
+  left: 85%;
+  animation: float 3s infinite ease-in-out 2s;
+}
+
+@keyframes starGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px #fec86a, 0 0 20px #fec86a, 0 0 30px #fec86a;
+  }
+  50% {
+    box-shadow: 0 0 15px #fec86a, 0 0 25px #fec86a, 0 0 35px #fec86a;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(4);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes drawLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .section-breaker .constellation-line {
+    background: rgba(254, 200, 106, 0.4);
+  }
+
+  .section-breaker .cosmic-dust {
+    background: rgba(254, 200, 106, 0.8);
+  }
+
+  .section-breaker .center-emblem::before,
+  .section-breaker .center-emblem::after {
+    border-color: rgba(254, 200, 106, 0.8);
+  }
+}
+
+/* only when the OS is in light mode… */
+@media (prefers-color-scheme: light) {
+  /* define your two background colors */
+  :root {
+    --section-bg-dark: var(--bg-dark); /* your true black */
+    --section-bg-alt: #1a1a1a; /* charcoal grey */
+  }
+
+  /* every section defaults to black… */
+  section {
+    background-color: var(--section-bg-dark) !important;
+  }
+
+  /* …and every even one gets charcoal */
+  section:nth-of-type(even) {
+    background-color: var(--section-bg-alt) !important;
+  }
+  .tech-item,
+  .hero-title,
+  .download-button,
+  .ri-github-fill,
+  .ri-linkedin-fill,
+  .ri-instagram-fill,
+  .ri-twitter-fill,
+  .ri-facebook-fill,
+  .ri-twitter-x-fill,
+  .tech-item * {
+    color: #fff !important;
+  }
+
+  .section-breaker {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: #000 !important;
+    color: #fff !important;
+    overflow: hidden; /* if you’re animating star‑dust */
+  }
+
+  /* ensure anything inside is white */
+  .section-breaker,
+  .section-breaker * {
+    color: #fff !important;
+  }
+
+  .command-prompt {
+    background-color: #6c757d;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-color);
   }
 }
